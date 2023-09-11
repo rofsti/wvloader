@@ -31,3 +31,8 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Intentional exclusion of app/src/main/assets/
+/app/src/main/assets/
+
+
