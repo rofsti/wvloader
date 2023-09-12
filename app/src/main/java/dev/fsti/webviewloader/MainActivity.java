@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.webView = (WebView) findViewById(R.id.webView);
+        webView = (WebView) findViewById(R.id.webView);
 
-        WebSettings webViewSettings = this.webView.getSettings();
+        WebSettings webViewSettings = webView.getSettings();
         webViewSettings.setAllowFileAccess(true);
         webViewSettings.setAllowContentAccess(true);
         webViewSettings.setAllowFileAccessFromFileURLs(true);
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
                 .build();
         LocalContentWebViewClient webViewClient = new LocalContentWebViewClient(assetLoader);
-        this.webView.setWebViewClient(webViewClient);
+        webView.setWebViewClient(webViewClient);
 
-        this.webView.loadUrl("file:///android_asset/index.html");
+        webView.loadUrl("file:///android_asset/index.html");
     }
 }
